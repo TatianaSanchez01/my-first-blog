@@ -9,27 +9,23 @@
 </head>
 
 <body>
+
     <div>
-        <div>
-            <h1><a href="/">Django Girls Blog</a></h1>
-        </div>
-
-        <div>
-            <p>published 02.07.2022, 13:57</p>
-            <h2><a href="">My first Post</a></h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ultricies placerat sapien, vel lobortis
-                orci
-                gravida a. Nunc et fermentum felis. Donec aliquam lacinia nunc eget aliquam. Aliquam semper, odio sit
-                amet
-                mattis interdum, tellus nisi gravida urna, ac condimentum lacus ligula et dui. Vivamus lorem massa,
-                finibus
-                at quam vel, bibendum semper diam. Aliquam mauris ex, pretium ut vehicula in, aliquam vel sem. Sed
-                mattis
-                tortor quis malesuada egestas. Maecenas posuere rhoncus condimentum. Aliquam consequat ante et finibus
-                fermentum. Aenean nec blandit erat.</p>
-        </div>
-
+        <h1><a href="/">Django Girls Blog</a></h1>
     </div>
+
+    {% for post in posts %}
+
+    <div>
+        <p>publicado: {{post.published_date }}</p>
+        <h2><a href="">{{post.title}}</a></h2>
+        <p>{{post.text|linebreaksbr}}</p>
+    </div>
+
+    {% endfor %}
+
+
+
 
 </body>
 
